@@ -1,0 +1,165 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Centering the main container */
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 850px;
+}
+
+/* Enhanced Heading Styling */
+.heading {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff; /* Blue color for the heading */
+    position: relative; /* For the underline effect */
+}
+
+/* Underline Animation */
+.heading::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 4px;
+    background-color: #007bff; /* Same blue color */
+    margin: 10px auto; /* Centering the underline */
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.heading:hover::after {
+    transform: scaleX(1); /* Scale on hover */
+}
+
+/* Flex layout for top and bottom controls */
+.top, .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Block styling for color picker and font size controls */
+.block {
+    flex: 1 1 200px;
+    min-width: 150px;
+}
+
+/* Enhanced styling for the paragraph tags inside the .block class */
+.block > p {
+    font-size: 1rem; /* Increased font size for better readability */
+    margin-bottom: 5px;
+    color: #495057; /* Darker gray for better contrast */
+    font-weight: 600; /* Slightly bold to stand out */
+    text-align: center; /* Center-align the text */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Hover effect for paragraph tags */
+.block > p:hover {
+    color: #007bff; /* Change color to blue on hover */
+    cursor: pointer; /* Indicate that it's interactive */
+}
+
+/* Styling input, select and button */
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Canvas styling */
+.canvas {
+    border: 2px dashed #6c757d;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Button styles */
+.bottom > button {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Button hover effect */
+.bottom > button:hover {
+    cursor: pointer;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .main {
+        padding: 20px;
+    }
+
+    .bottom > button, .block {
+        flex: 1 1 100%;
+    }
+
+    .canvas {
+        width: 100%;
+        height: auto;
+    }
+}
